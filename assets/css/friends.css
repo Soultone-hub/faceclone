@@ -1,0 +1,100 @@
+/* assets/css/friends.css */
+
+.fb-friends-page-container.fb-dark-layout {
+    padding-top: 56px; /* Hauteur du header principal fixe */
+    background-color: #18191A; /* Fond sombre de l'application */
+    min-height: calc(100vh - 56px);
+    color: #E4E6EB;
+}
+
+.fb-friends-page-container h2 {
+    font-size: 20px; /* Taille des titres de section FB */
+    font-weight: 700;
+    margin-bottom: 16px !important; /* Bootstrap mb-3 override */
+}
+
+/* Style pour les inputs en mode sombre */
+.fb-dark-input.form-control {
+    background-color: #3A3B3C;
+    border-color: #3A3B3C;
+    color: #E4E6EB;
+    border-radius: 6px; /* Coins arrondis FB */
+    padding: 10px 12px;
+    font-size: 15px;
+}
+.fb-dark-input.form-control::placeholder {
+    color: #b0b3b8;
+}
+.fb-dark-input.form-control:focus {
+    background-color: #3A3B3C;
+    border-color: var(--facebook-blue);
+    box-shadow: 0 0 0 0.2rem rgba(24, 119, 242, 0.25); /* Halo de focus standard */
+    color: #E4E6EB;
+}
+
+/* Grille pour afficher les cartes d'utilisateurs */
+.fb-users-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Grille responsive */
+    gap: 16px;
+}
+
+/* Style pour la carte utilisateur (générée par createUserCardHTML) */
+/* Assurez-vous que createUserCardHTML génère une structure comme <div class="card card-fb-dark fb-user-card">...</div> */
+.fb-user-card.card-fb-dark { /* card-fb-dark vient de global.css ou home.css */
+    background-color: #242526; /* Fond des cartes */
+    border: 1px solid #3A3B3C; /* Bordure subtile pour les cartes */
+    border-radius: 8px;
+    padding: 0; /* Le padding sera dans card-body */
+    text-align: center; /* Centrer le contenu de la carte */
+}
+.fb-user-card .fb-user-card-avatar { /* Si vous utilisez une classe pour l'avatar */
+    width: 100%; /* Prend toute la largeur de la carte */
+    height: 180px; /* Hauteur fixe pour l'image */
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid #3A3B3C; /* Séparateur */
+}
+.fb-user-card .card-body { /* Bootstrap .card-body */
+    padding: 12px;
+}
+.fb-user-card .card-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px !important; /* Espace avant les boutons */
+    color: #E4E6EB; /* Assurer la couleur du texte */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fb-user-card .btn { /* Style général pour les boutons dans la carte */
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+}
+.fb-user-card .btn-primary { /* Bouton Accepter / Ajouter */
+    background-color: var(--facebook-blue) !important;
+    border-color: var(--facebook-blue) !important;
+}
+.fb-user-card .btn-primary:hover {
+    background-color: var(--facebook-blue-hover) !important;
+    border-color: var(--facebook-blue-hover) !important;
+}
+.fb-user-card .btn-secondary-dark { /* Bouton Refuser */
+    background-color: #3A3B3C !important;
+    color: #E4E6EB !important;
+    border: none !important;
+}
+.fb-user-card .btn-secondary-dark:hover {
+    background-color: #4E4F50 !important;
+}
+/* Message si aucune demande / aucun utilisateur */
+.text-muted-dark { /* Devrait être dans global.css */
+    color: #a8abaf !important;
+}
+
+/* Séparateur sombre */
+.fb-divider-dark {
+    border-color: #3A3B3C !important;
+}

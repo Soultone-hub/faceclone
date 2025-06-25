@@ -1,0 +1,370 @@
+/* assets/css/profile.css */
+
+/* Style pour le header simple spécifique à la page de profil (si besoin de plus que l'inline) */
+.simple-profile-header {
+    background-color: #242526; /* Fond sombre pour le header */
+    padding: 8px 16px;
+    border-bottom: 1px solid #3A3B3C;
+    text-align: center; /* Ou ajustez selon vos préférences */
+    position: fixed; /* Rendre le header simple fixe en haut */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1031; /* Au-dessus du header principal de l'app si jamais ils coexistent */
+}
+.simple-profile-header nav a {
+    color: #E4E6EB;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+.simple-profile-header nav a.active-nav-link { /* Style pour le lien actif */
+    color: var(--facebook-blue);
+    font-weight: bold;
+}
+.simple-profile-header .simple-logout-btn {
+    background-color: #3A3B3C;
+    color: #E4E6EB;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.simple-profile-header .simple-logout-btn:hover {
+    background-color: #4E4F50;
+}
+
+
+/* Ajustement pour le contenu principal quand on a le header simple fixe */
+.fb-profile-page-with-simple-header {
+    background-color: #18191A;
+    color: #E4E6EB;
+    /* Calculez la hauteur de votre .simple-profile-header et mettez-la ici */
+    /* Si le header fait environ 40-50px + padding : */
+    padding-top: 60px; /* Exemple, À AJUSTER PRÉCISÉMENT */ 
+}
+
+/* TOUS LES AUTRES STYLES CI-DESSOUS SONT CEUX DÉJÀ FOURNIS POUR LE CORPS DU PROFIL */
+/* ILS DEVRAIENT S'APPLIQUER CORRECTEMENT À LA STRUCTURE HTML CI-DESSUS */
+
+.fb-profile-header-container {
+    max-width: 980px; /* Réduit pour mieux correspondre à la largeur du contenu Facebook */
+    margin: 0 auto 16px auto; 
+    background-color: #242526; 
+    border-radius: 0 0 8px 8px; 
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.card-fb-dark-no-padding { 
+    padding: 0 !important;
+}
+
+.fb-profile-cover-photo {
+    height: 348px; 
+    max-height: 360px; /* Un peu de marge */
+    position: relative;
+    overflow: hidden; 
+    border-radius: 8px 8px 0 0; 
+    background-color: #3A3B3C; 
+}
+.fb-profile-cover-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.fb-cover-photo-button {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background-color: rgba(230, 230, 230, 0.9) !important; /* Plus proche du blanc FB */
+    color: #050505 !important; 
+    border: none !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    padding: 8px 12px !important; /* Padding FB */
+    border-radius: 6px !important;
+}
+.fb-cover-photo-button:hover {
+    background-color: rgba(240, 240, 240, 1) !important;
+}
+.fb-cover-photo-button i {
+    margin-right: 6px;
+}
+
+.fb-profile-info-bar {
+    display: flex;
+    align-items: flex-end; 
+    padding: 0 32px; 
+    position: relative;
+    margin-top: -32px; 
+    padding-bottom: 16px;
+    border-bottom: 1px solid #3A3B3C; 
+}
+
+.fb-profile-picture-container {
+    position: relative;
+    margin-right: 16px;
+    z-index: 1; 
+}
+.fb-profile-picture {
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    border: 4px solid #242526; 
+    object-fit: cover;
+    background-color: #4E4F50; 
+}
+.fb-profile-picture-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #3A3B3C !important; 
+    color: #E4E6EB !important;
+    border-radius: 50% !important;
+    width: 36px !important;
+    height: 36px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border: 1px solid #18191A !important; 
+    box-shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+.fb-profile-picture-button:hover {
+    background-color: #4E4F50 !important;
+}
+
+.fb-profile-name-actions h1#profile-name { /* Cibler l'ID spécifique */
+    font-size: 32px; /* Taille du nom sur FB */
+    font-weight: 700;
+    margin-bottom: 2px; /* Moins d'espace */
+    line-height: 38px;
+    color: #E4E6EB; 
+}
+.fb-profile-name-actions p#profile-page-friends-count {
+    color: #B0B3B8 !important; 
+    font-size: 15px;
+    font-weight: 500; /* Un peu plus lisible */
+    margin-bottom: 16px; /* Espace avant les boutons en dessous sur mobile, ou pour aligner avec les boutons à droite */
+}
+
+.fb-profile-buttons {
+    padding-bottom: 16px; 
+}
+.fb-profile-buttons .btn {
+    font-size: 15px !important; 
+    font-weight: 600 !important;
+    padding: 7px 12px !important; 
+    margin-left: 8px;
+    border-radius: 6px !important;
+}
+.fb-profile-buttons .btn-primary { 
+    background-color: var(--facebook-blue) !important;
+    border-color: var(--facebook-blue) !important;
+}
+.fb-profile-buttons .btn-primary:hover {
+    background-color: var(--facebook-blue-hover) !important;
+    border-color: var(--facebook-blue-hover) !important;
+}
+
+.btn-secondary-dark { 
+    background-color: #3A3B3C !important;
+    color: #E4E6EB !important;
+    border: none !important;
+}
+.btn-secondary-dark:hover {
+    background-color: #4E4F50 !important;
+}
+
+.fb-profile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px; 
+    height: 60px; /* Hauteur de la barre de nav profil FB */
+}
+.fb-profile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    height: 100%; /* Pour que les liens prennent toute la hauteur */
+}
+.fb-profile-nav ul li a {
+    color: #B0B3B8; 
+    text-decoration: none;
+    padding: 0 16px; /* Padding horizontal uniquement */
+    display: flex; /* Pour centrer verticalement */
+    align-items: center; /* Pour centrer verticalement */
+    height: 100%;
+    font-weight: 600;
+    font-size: 15px;
+    border-bottom: 3px solid transparent; 
+}
+.fb-profile-nav ul li a:hover {
+    background-color: rgba(255,255,255,0.05); 
+    border-radius: 6px;
+}
+.fb-profile-nav ul li a.active {
+    color: var(--facebook-blue);
+    border-bottom-color: var(--facebook-blue);
+}
+.fb-profile-nav ul li a.active:hover {
+    background-color: transparent; 
+}
+.fb-profile-nav .btn-secondary-dark i { 
+    font-size: 16px; 
+}
+
+
+.fb-profile-body-container {
+    display: flex;
+    gap: 16px;
+    max-width: 980px; 
+    margin: 0 auto;
+    padding: 16px;
+}
+.fb-profile-left-column {
+    width: 360px; 
+    flex-shrink: 0; 
+}
+.fb-profile-right-column {
+    flex-grow: 1; 
+}
+
+.card-fb-dark { 
+    background-color: #242526; 
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    color: #E4E6EB; 
+}
+.card-fb-dark h5 { 
+    font-size: 17px; /* Taille des titres de cartes FB */
+    font-weight: 600; /* Moins gras que h1 */
+    color: #E4E6EB;
+}
+
+.btn-secondary-dark-outline { 
+    background-color: rgba(255,255,255,0.1) !important; /* Gris plus clair pour ce bouton FB */
+    color: #E4E6EB !important;
+    border: none !important;
+    font-weight: 600 !important; /* Plus gras */
+    font-size: 15px !important;
+    padding: 7px 12px !important;
+}
+.btn-secondary-dark-outline:hover {
+    background-color: rgba(255,255,255,0.15) !important;
+}
+#profile-bio-content {
+    font-size: 15px;
+    text-align: center;
+    padding: 8px 0;
+    color: #E4E6EB; /* S'assurer que la bio est lisible */
+}
+
+.fb-profile-left-column .row.g-1 img.fb-profile-photo-thumb {
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border-radius: 4px; /* Coins légèrement arrondis pour les photos */
+}
+.fb-profile-left-column .link-primary { /* Pour "Voir toutes les photos" */
+    font-size: 15px !important;
+    font-weight: 500 !important;
+}
+
+
+.fb-profile-right-column .fb-create-post-box {
+    padding: 12px 16px;
+}
+.fb-profile-right-column .create-post-header {
+    display: flex;
+    align-items: center;
+}
+.fb-profile-right-column .fb-user-avatar-md {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.fb-profile-right-column .create-post-input {
+    flex-grow: 1;
+    background-color: #3A3B3C;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 16px; /* Plus de padding pour cet input */
+    color: #E4E6EB;
+    font-size: 17px;
+    height: 40px;
+}
+.fb-profile-right-column .create-post-input::placeholder {
+    color: #B0B3B8;
+}
+.fb-profile-right-column .fb-create-post-box hr {
+    border-color: #3A3B3C; /* Ligne plus foncée */
+    margin-top: 12px !important;
+    margin-bottom: 8px !important;
+}
+.fb-profile-right-column .create-post-actions {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 4px; /* Moins d'espace */
+}
+.fb-profile-right-column .create-post-actions button {
+    background: none;
+    border: none;
+    color: #B0B3B8;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-grow: 1; 
+    justify-content: center;
+    font-size: 15px; /* Taille du texte des actions */
+}
+.fb-profile-right-column .create-post-actions button:hover {
+    background-color: rgba(255,255,255,0.05);
+}
+.fb-profile-right-column .create-post-actions button i {
+    font-size: 20px;
+}
+
+/* Style pour la carte "Publications" avec le bouton Filtres */
+.fb-profile-right-column .card-fb-dark.p-2.d-flex {
+    padding: 8px 16px !important; /* Padding spécifique FB */
+}
+.fb-profile-right-column .card-fb-dark.p-2.d-flex h6 {
+    font-size: 17px;
+    font-weight: 600;
+}
+.fb-profile-right-column .card-fb-dark.p-2.d-flex .btn-secondary-dark {
+    padding: 6px 10px !important; /* Bouton filtre plus petit */
+}
+
+
+/* Styles pour les posts dans #profile-feed-container */
+#profile-feed-container .post-card { 
+    background-color: #242526;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    color: #E4E6EB;
+}
+/* ... (Copiez ici les styles détaillés pour .post-header, .post-content, etc.,
+       depuis votre `home.css` si vous les avez déjà définis, en vous assurant
+       que les couleurs sont adaptées au mode sombre) ... */
+/* Par exemple : */
+#profile-feed-container .post-header { display: flex; align-items: center; margin-bottom: 12px; }
+#profile-feed-container .post-header img.avatar { width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; }
+#profile-feed-container .post-header strong { font-weight: 600; color: #E4E6EB; }
+#profile-feed-container .post-header small { font-size: 13px; color: #B0B3B8; margin-left: 5px; }
+#profile-feed-container .post-content { margin-bottom: 12px; font-size: 15px; line-height: 1.4; }
+#profile-feed-container .post-image { max-width: 100%; border-radius: 8px; margin-bottom: 12px; }
+#profile-feed-container .post-actions { display: flex; justify-content: space-around; border-top: 1px solid #3A3B3C; padding-top: 8px; margin-top: 12px; }
+#profile-feed-container .post-actions button { background: none; border: none; color: #B0B3B8; font-weight: 600; flex-grow: 1; padding: 8px; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 14px; }
+#profile-feed-container .post-actions button:hover { background-color: rgba(255,255,255,0.05); }
+/* ... styles pour la section commentaires ... */

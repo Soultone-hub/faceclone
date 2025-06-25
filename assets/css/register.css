@@ -1,0 +1,190 @@
+/* assets/css/register.css */
+
+.modal-backdrop-custom {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc un peu plus opaque */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1040; 
+    padding: 20px; 
+    box-sizing: border-box;
+    overflow-y: auto; 
+}
+
+.modal-dialog-custom.fb-register-modal {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2); 
+    width: 100%;
+    max-width: 432px; /* Largeur de la modale d'inscription Facebook */
+    position: relative; 
+    margin: auto; 
+    text-align: center; 
+}
+
+/* Logo "facebook" en haut de la modale d'inscription */
+.fb-logo-text-register {
+    font-family: Arial, Helvetica, sans-serif; /* Utiliser une police système commune */
+    font-weight: 900; 
+    font-size: 50px; 
+    color: var(--facebook-blue);
+    line-height: 1; 
+    margin: 10px 0 0px 0; 
+    letter-spacing: -1px; 
+}
+
+.fb-modal-divider-header { /* Ligne sous le logo, avant le titre "Créer un compte" */
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin-top: 12px !important; 
+    margin-bottom: 16px !important; 
+}
+
+
+.modal-header-custom { /* Conteneur de "Créer un compte" et "C'est simple et rapide" */
+    padding: 0 16px; 
+    padding-bottom: 0; 
+    text-align: left; 
+}
+
+.modal-title-custom { /* Pour "Créer un compte" */
+    font-size: 25px; 
+    font-weight: 700; 
+    color: var(--primary-text);
+    line-height: 1.2; 
+    margin-bottom: 0;
+}
+
+.modal-subtitle-custom { /* Pour "C’est simple et rapide." */
+    font-size: 15px;
+    color: var(--secondary-text);
+    line-height: 20px;
+    margin-top: 2px; 
+    margin-bottom: 12px; 
+}
+
+.modal-body-custom {
+    padding: 16px;
+    padding-top: 0; 
+    text-align: left; 
+}
+
+.fb-register-input.form-control,
+.fb-register-select.form-select {
+    background-color: #f5f6f7; 
+    border: 1px solid #ccd0d5 !important; 
+    font-size: 15px !important;
+    padding: 10px 12px !important; 
+    height: 40px !important; 
+    border-radius: 5px !important; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+.fb-register-input.form-control::placeholder {
+    color: #8a8d91; 
+}
+.fb-register-input.form-control:focus,
+.fb-register-select.form-select:focus {
+    background-color: var(--input-background); 
+    border-color: var(--input-border-focus) !important;
+    box-shadow: 0 0 0 1px var(--input-border-focus) !important; 
+}
+
+.fb-small-label { 
+    font-size: 12px;
+    color: var(--secondary-text);
+    font-weight: normal; 
+    margin-bottom: 2px;
+    display: block;
+}
+.fb-small-label i.fa-question-circle { 
+    color: #8a8d91; 
+    opacity: 1;
+    margin-left: 3px;
+    font-size: 11px; 
+}
+
+.fb-register-radio-group { 
+    display: flex;
+    justify-content: space-between;
+    gap: 8px; 
+}
+.fb-register-radio-option { 
+    flex-grow: 1;
+    border: 1px solid #ccd0d5; 
+    border-radius: 5px;
+    padding: 0 10px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    height: 36px; 
+    box-sizing: border-box;
+    background-color: #f5f6f7; 
+}
+.fb-register-radio-option:has(input:checked) { 
+    border-color: var(--input-border-focus);
+    background-color: #e7f3ff; 
+}
+.fb-register-radio-option .form-check-label { /* Pas besoin si le label est le conteneur */
+    color: var(--primary-text);
+    margin-right: auto; 
+    line-height: 34px; 
+}
+.fb-register-radio-option .form-check-input {
+    margin-left: 8px; 
+    margin-top: 0; 
+    transform: scale(1.1); 
+}
+
+.fb-terms-text {
+    font-size: 11px;
+    color: var(--secondary-text);
+    line-height: 1.3636; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.fb-terms-text a {
+    color: var(--link-color) !important; 
+    text-decoration: none;
+}
+.fb-terms-text a:hover {
+    text-decoration: underline;
+}
+
+.fb-register-submit-button.btn-lg { /* Bouton S'inscrire */
+    font-size: 18px !important; 
+    font-weight: 600 !important; 
+    padding: 0 32px !important;
+    height: 36px !important; 
+    line-height: 36px !important; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    background-color: var(--facebook-green) !important;
+    border-color: var(--facebook-green) !important;
+    color: white !important;
+    border-radius: 6px !important;
+}
+.fb-register-submit-button.btn-lg:hover {
+    background-color: var(--facebook-green-hover) !important;
+    border-color: var(--facebook-green-hover) !important;
+}
+
+.fb-already-have-account-link {
+    display: block;
+    text-align: center;
+    font-size: 17px; 
+    color: var(--link-color) !important;
+    text-decoration: none;
+    margin-top: 16px; 
+    font-weight: 500;
+}
+.fb-already-have-account-link:hover {
+    text-decoration: underline;
+}

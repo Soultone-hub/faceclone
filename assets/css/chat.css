@@ -1,0 +1,220 @@
+/* assets/css/chat.css - Style léger pour la structure fournie */
+
+/* Assurez-vous que global.css définit le fond du body et les variables de base */
+/* Exemple de ce qui pourrait être dans global.css :
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5; 
+}
+:root { --facebook-blue: #1877F2; }
+*/
+
+/* Header principal (styles probablement déjà dans global.css ou home.css) */
+/* .main-app-header { ... } */
+/* .fb-dark-header { ... } */
+/* Si le header est fixe, le main a besoin d'un padding-top */
+
+/* Conteneur principal de la page de chat */
+#chat-page-container { /* Votre HTML utilise cet ID pour le main */
+    display: flex;
+    /* height: calc(100vh - 56px); Si le header principal fait 56px et est fixe */
+    /* Si le header n'est pas fixe, ou si la hauteur est déjà gérée par la classe dans le main */
+    height: 85vh; /* Hauteur exemple, ajustez */
+    border: 1px solid #ddd; /* Bordure que vous aviez */
+    margin-top: 10px; /* Espace si le header n'est pas fixe, ou après le padding-top */
+    background-color: #fff; /* Fond blanc pour la zone de chat */
+}
+
+/* Sidebar des conversations (gauche) */
+#chat-sidebar {
+    width: 30%;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9; /* Léger fond pour la sidebar */
+}
+
+#chat-sidebar .sidebar-header {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+#chat-sidebar .sidebar-header h2 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+#chat-sidebar .sidebar-header input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Pour que le padding ne change pas la largeur */
+    font-size: 14px;
+}
+
+#conversations-list {
+    flex-grow: 1; /* Pour qu'elle prenne l'espace restant */
+    padding: 5px 0;
+}
+/* Style pour les items de conversation (générés par JS) */
+.conversation-item { /* Supposons que createConversationItemHTML génère cette classe */
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.conversation-item:hover {
+    background-color: #e9e9e9;
+}
+.conversation-item.active-conversation { /* Classe pour l'item actif */
+    background-color: #d1e7fd; /* Bleu clair Bootstrap-like */
+}
+.conversation-item img { /* Avatar dans la liste */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.conversation-item div strong { /* Nom de l'utilisateur */
+    display: block;
+    font-weight: 600;
+    color: #333;
+}
+.conversation-item div small { /* Dernier message / timestamp */
+    font-size: 0.9em;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px; /* Limiter la largeur pour l'ellipsis */
+}
+
+
+/* Fenêtre de Chat (droite) */
+#chat-window {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome-message {
+    flex-grow: 1; /* Pour centrer le message verticalement aussi */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #777;
+    padding: 20px;
+}
+#welcome-message h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#active-chat-area {
+    display: none; /* Sera changé en 'flex' par JS */
+    flex-direction: column;
+    height: 100%; /* Pour prendre toute la hauteur de #chat-window */
+}
+
+#active-chat-area #chat-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f9f9f9; /* Léger fond pour le header du chat */
+}
+#active-chat-area #chat-header img { /* Avatar de l'interlocuteur */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#active-chat-area #chat-header strong { /* Nom de l'interlocuteur */
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+#messages-container {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse; /* Nouveaux messages en bas */
+    background-color: #fff; /* Fond blanc pour la zone des messages */
+}
+/* Style pour les bulles de message (générées par JS) */
+.message { /* Supposons que createMessageHTML génère cette classe */
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+.message.sent { /* Message envoyé par l'utilisateur actuel */
+    align-self: flex-end;
+    background-color: var(--facebook-blue); /* Ou une autre couleur bleue */
+    color: white;
+    margin-left: auto;
+}
+.message.received { /* Message reçu */
+    align-self: flex-start;
+    background-color: #e9ebee; /* Gris clair pour les messages reçus */
+    color: #333;
+    margin-right: auto;
+}
+.message + .message { /* Espace entre les bulles consécutives */
+    /* margin-top: 2px;  Peut-être pas nécessaire si margin-bottom est sur .message */
+}
+
+#chat-input-area {
+    padding: 10px 15px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f0f2f5; /* Fond légèrement différent pour la zone de saisie */
+}
+#chat-input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Pour un look plus "chat" */
+    font-size: 15px;
+}
+#chat-input-area button {
+    padding: 8px 15px;
+    background-color: var(--facebook-blue); /* Ou une autre couleur primaire */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+#chat-input-area button:hover {
+    opacity: 0.9;
+}
+
+/* Assurer que le header principal (s'il est fixe) ne cache pas le début du contenu */
+body.app-active main { /* Si vous ajoutez .app-active au body après connexion */
+    /* padding-top: 56px; /* Hauteur de votre .main-app-header */
+}
+
+/* Si votre header de chat.html est différent du header principal */
+/* Adaptez le padding-top de #chat-page-container en conséquence */
+/* Si le header que vous avez mis dans chat.html est le main-app-header,
+   et qu'il est 'position: fixed' ou 'sticky', alors #chat-page-container aura besoin d'un margin-top ou d'un padding-top
+   égal à la hauteur du header.
+   Si #chat-page-container est le seul enfant de <main id="app-container"> après le header,
+   alors c'est le <main id="app-container"> qui pourrait avoir besoin du padding-top.
+   Pour l'instant, j'ai mis la hauteur de #chat-page-container à 85vh et un margin-top.
+*/

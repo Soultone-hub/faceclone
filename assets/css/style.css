@@ -1,0 +1,51 @@
+/* assets/css/style.css */
+
+/* Variables CSS */
+
+
+/* Styles spécifiques pour la page de connexion Facebook */
+
+
+.fb-create-account-button.btn-lg {
+    font-size: 17px !important;
+    font-weight: 700 !important; 
+    padding: 0 16px !important;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 6px !important;
+    background-color: var(--facebook-green) !important;
+    border-color: var(--facebook-green) !important;
+    color: white !important;
+}
+.fb-create-account-button.btn-lg:hover {
+    background-color: var(--facebook-green-hover) !important;
+    border-color: var(--facebook-green-hover) !important;
+}
+
+.fb-create-page-link {
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--primary-text) !important;
+    text-align: center;
+}
+.fb-create-page-link a {
+    color: var(--primary-text) !important;
+    font-weight: 600 !important;
+    text-decoration: none;
+}
+.fb-create-page-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Styles généraux pour le reste de l'application (à développer) */
+/* Exemple: Header principal que vous utiliserez après la connexion */
+
+/* Vous ajouterez ici les styles pour la barre de recherche, les icônes de navigation, etc. */
+/* quand nous stylerons la page d'accueil post-connexion. */
+
+/* assets/css/style.css */
+
+/* ... (Styles existants pour :root, body, fb-login-page, etc.) ... */
+
