@@ -11,7 +11,7 @@ const routes = {
     'profile': { path: 'vues/clients/profile.html', init: initProfilePage, isProtected: true },
     'friends': { path: 'vues/clients/friends.html', init: initFriendsPage, isProtected: true },
     'chat': { path: 'vues/clients/chat.html', init: initChatPage, isProtected: true },
-
+    'auth/forgot-password': { path: 'vues/clients/auth/forgot-password.html', init: initForgotPasswordPage, isProtected: false },
     // --- Routes Admin ---
     'admin/login': { path: 'vues/back-office/login.html', init: initAdminLoginPage, isAdminRoute: true, isProtected: false },
     'admin/dashboard': { path: 'vues/back-office/dashboard.html', init: initAdminDashboardPage, isAdminRoute: true, isProtected: true },

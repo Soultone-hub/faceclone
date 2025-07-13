@@ -634,3 +634,44 @@ function logout() {
     document.body.classList.remove('app-active'); // ENLEVER LA CLASSE ICI
     window.location.hash = '#auth/login';
 }
+
+
+
+
+
+
+
+
+
+
+
+// Dans main.js
+
+function initForgotPasswordPage() {
+    console.log("Page Mot de passe oublié initialisée.");
+    const form = document.getElementById('forgot-password-form');
+    const messageElement = document.getElementById('forgot-message');
+
+    if(form && !form.hasAttribute('data-listener-attached')) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const emailInput = document.getElementById('forgot-email');
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            messageElement.textContent = "Recherche en cours...";
+            messageElement.className = "mt-3 text-muted";
+            submitButton.disabled = true;
+
+            // Appel API simulé
+            // const response = await apiRequestPasswordReset(emailInput.value);
+            // Simulation directe
+            setTimeout(() => {
+                messageElement.textContent = "Si un compte correspondant à cet e-mail existe, un lien de réinitialisation a été envoyé.";
+                messageElement.className = "mt-3 text-success";
+                submitButton.disabled = false;
+                emailInput.value = "";
+            }, 1500);
+        });
+        form.setAttribute('data-listener-attached', 'true');
+    }
+}
